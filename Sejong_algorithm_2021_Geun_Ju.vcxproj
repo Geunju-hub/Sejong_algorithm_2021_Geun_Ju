@@ -19,8 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2주차-(1)선택정렬.cpp" />
-    <ClCompile Include="2주차-%282%29삽입정렬.cpp" />
+    <ClCompile Include="12주차-%281%29.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
