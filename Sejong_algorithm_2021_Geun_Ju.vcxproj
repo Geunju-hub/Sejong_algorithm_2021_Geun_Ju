@@ -19,7 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="12주차-%281%29.c" />
+    <ClCompile Include="3주차(1).c" />
+    <ClCompile Include="3주차-(1) - BinaryTree Version.c" />
+    <ClCompile Include="3주차-(2).c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
