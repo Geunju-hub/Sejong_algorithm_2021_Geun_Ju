@@ -129,7 +129,7 @@ void insertItem(int K) {
 
 void reduce(BTnode *z) {
 	BTnode *w = z->parent;
-	BTnode *zs = w->left == z ? w->right : z->left;
+	BTnode *zs = w->left == z ? w->right : w->left;
 	if (w == root) {
 		root = zs;
 		zs->parent = NULL;
@@ -168,7 +168,7 @@ void removeMAX() {
 	}
 	printf("%d\n", root->key);
 	root->key = last->key;
-	BTnode *z = last->left;
+	BTnode *z = last->right;
 	retreatLast(last);
 	reduce(z);
 	downHeap(root);

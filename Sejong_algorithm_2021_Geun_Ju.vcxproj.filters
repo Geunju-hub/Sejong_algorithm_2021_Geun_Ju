@@ -15,12 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="3주차(1).c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="3주차-(2).c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="3주차-(1) - BinaryTree Version.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
