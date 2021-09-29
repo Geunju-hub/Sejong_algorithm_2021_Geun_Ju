@@ -4,13 +4,18 @@
 #include <time.h>
 #include <Windows.h>
 
+typedef struct Index {
+	int a, b;
+}index;
+
 int *B;//병합 정렬에 쓰일 임시 배열
+int n;
 
 int findPivot(int *arr, int left, int right) {
 	return rand() % (right - left + 1) + left;
 }//random으로 pivot 뽑기 (범위 left~right) 주의하기
 
-int partition(int *arr, int left, int right, int k) {
+index partition(int *arr, int left, int right, int k) {
 	int p = arr[k];
 	int tmp = arr[k];
 	arr[k] = arr[right];
@@ -32,15 +37,18 @@ int partition(int *arr, int left, int right, int k) {
 	tmp = arr[i];
 	arr[i] = arr[right];
 	arr[right] = tmp;
-	return i;
+	index I;
+	I.a = i;
+	I.b = j;
+	return I;
 }//앞과 뒤부터 index이동하며 정렬(중복키 허용)
 
 void quicksort(int *arr, int left, int right) {
 	if (left < right) {
 		int k = findPivot(arr, left, right);
-		int a = partition(arr, left, right, k);
-		quicksort(arr, left, a - 1);
-		quicksort(arr, a + 1, right);
+		index I = partition(arr, left, right, k);
+		quicksort(arr, left, I.a - 1);
+		quicksort(arr, I.b + 1, right);
 	}
 }//퀵정렬
 
@@ -94,6 +102,7 @@ void Tmergesort(int *arr, int left, int right) {
 
 	QueryPerformanceFrequency(&ticksPerSec);
 	QueryPerformanceCounter(&start);
+	B = (int *)calloc(n, sizeof(int));
 	mergesort(arr, left, right);
 	QueryPerformanceCounter(&end);
 
@@ -103,23 +112,15 @@ void Tmergesort(int *arr, int left, int right) {
 
 int main(void) {
 	srand(time(NULL));
-	int n;
 	scanf("%d", &n);
 	int *q_arr = (int *)calloc(n, sizeof(int));
 	int *m_arr = (int *)calloc(n, sizeof(int));
-	B = (int *)calloc(n, sizeof(int));
-	//퀵정렬에 이용할 q_arr 배열, 병합정렬에 이용할 m_arr,B배열 동적할당
 	for (int i = 0; i < n; i++) {
-		unsigned int e = rand()%n;
+		int e = rand() % n;
 		q_arr[i] = e;
 		m_arr[i] = e;
 	}
-	//랜덤함수 이용하여 두 배열에 동일한 랜덤값 넣기
 	Tmergesort(m_arr, 0, n - 1);
 	Tquicksort(q_arr, 0, n - 1);
-	//퀵정렬과 병합정렬 실행
-	free(q_arr);
-	free(m_arr);
-	free(B);//세 배열 메모리 해제
 	return 0;
 }
