@@ -19,8 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="과제2 -%282%29.c" />
-    <ClCompile Include="과제2 -%281%29.c" />
+    <ClCompile Include="7주차-(2).c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

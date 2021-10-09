@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="과제2 -%281%29.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="과제2 -%282%29.c">
+    <ClCompile Include="7주차-(2).c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
