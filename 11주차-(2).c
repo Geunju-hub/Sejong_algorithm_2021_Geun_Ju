@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int n, m, s;
+int n, m, s;//정점 수, 간선 수, 시작 정점 전역변수 선언
 
 typedef struct Queue {
 	int queue[1001];
